@@ -21,7 +21,7 @@ public:
 		if(rand_){
 			random_device rd;
     		mt19937 gen(rd());
-    		uniform_int_distribution<> dis(1, 10);
+    		uniform_int_distribution<> dis(1, 100);
     		for (int i = 0; i < dim*dim; ++i)
     		{    		
 	    		mat[i] = dis(gen);    		
@@ -114,7 +114,7 @@ void unir(int pi, int pj, Matrix* m, Matrix p){
 }
 
 Matrix strassen(Matrix a, Matrix b){
-	if (a.dim < 2){
+	if (a.dim < 8){
 		return reg_mult(a, b);
 	}
 	Matrix a11 = parte(0, 0, a);
@@ -145,10 +145,10 @@ Matrix strassen(Matrix a, Matrix b){
 
 int main(int argc, char const *argv[])
 {	
-	Matrix a(2023, true, false);
+	Matrix a(512, true, false);
 	a.print();
     cout<<endl;
-    Matrix b(2023, true, false);
+    Matrix b(512, true, false);
     b.print();
     cout<<endl;
     Matrix c = strassen(a, b);
