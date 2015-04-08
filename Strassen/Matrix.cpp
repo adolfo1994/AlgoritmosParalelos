@@ -31,7 +31,7 @@ public:
     inline int& operator()(int i, int j){
         return mat[i*dim + j];
     }
-    
+
     Matrix operator + (Matrix b){
         Matrix c(dim, false, false);
         for (int i = 0; i < dim; ++i)
@@ -144,9 +144,8 @@ Matrix strassen(Matrix a, Matrix b){
 int main(int argc, char const *argv[])
 {   
     Matrix a(512, true, false);
-    cout<<endl;
     Matrix b(512, true, false);
-    cout<<endl;
+
     Matrix c = strassen(a, b);
     c.print();
     return 0;
