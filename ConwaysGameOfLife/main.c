@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <X11/Xlib.h>
+#include <graphics.h>
 #include <mpi.h>
 
 int main(int argc, char const *argv[])

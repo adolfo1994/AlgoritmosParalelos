@@ -1,0 +1,2 @@
+all:
+    gcc -o Life main.c /usr/lib/libXbgi.a -lX11 -lm
